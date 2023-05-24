@@ -1,4 +1,4 @@
-module google.golang.org/protobuf
+module module github.com/chris-henderson-alation/protobuf-go
 
 go 1.11
 

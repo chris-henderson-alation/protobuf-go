@@ -5407,7 +5407,9 @@ func consumeBytesNoZero(b []byte, p pointer, wtyp protowire.Type, f *coderFieldI
 	if n < 0 {
 		return out, errDecode
 	}
-	*p.Bytes() = append(([]byte)(nil), v...)
+	p.SetPointer(pointerOf(Pointer(&v)))
+	//*p.Bytes() = v
+	//*p.Bytes() = append(([]byte)(nil), v...)
 	out.n = n
 	return out, nil
 }
